@@ -1,13 +1,21 @@
-import "./App.css";
-import { Switch, Route } from "react-router-dom";
-import MainPage from "./pages/MainPage";
+import React, { useState } from "react";
+import "./index.css";
+import TodoForm from "./component/TodoForm";
+import TodoList from "./component/TodoList";
 
 function App() {
+  const [inputText, setInputText] = useState("");
+  const [todos, setTodos] = useState([]);
+
   return (
     <div className="App">
-      <Switch>
-        <Route path="/" component={MainPage} />
-      </Switch>
+      <TodoForm
+        todos={todos}
+        setTodos={setTodos}
+        inputText={inputText}
+        setInputText={setInputText}
+      />
+      <TodoList todos={todos} />
     </div>
   );
 }
