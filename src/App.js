@@ -16,8 +16,10 @@ function App() {
 
   useEffect(() => {
     //console.log("hey");
+
     filterHandler();
     saveLocalTodos();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [todos, status]);
 
   const filterHandler = () => {
