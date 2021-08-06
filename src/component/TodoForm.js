@@ -15,6 +15,13 @@ export default function TodoForm(props) {
     props.setInputText("");
   };
 
+  const statusHandler = (e) => {
+    e.preventDefault();
+    //console.log(e);
+    //console.log(e.target.value);
+    props.setStatus(e.target.value);
+  };
+
   return (
     <div className="container">
       <div
@@ -51,6 +58,7 @@ export default function TodoForm(props) {
             <i className="fa fa-plus" aria-hidden="true"></i>{" "}
           </button>
           <select
+            onChange={statusHandler}
             name="todos"
             className="filter-todos"
             style={{ marginLeft: "3rem", width: "20%", height: "2rem" }}

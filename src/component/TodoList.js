@@ -14,8 +14,14 @@ export default function TodoList(props) {
           marginTop: "5rem",
         }}
       >
-        {props.todos.map((todo) => (
-          <Todo key={todo.id} text={todo.text} />
+        {props.filteredTodos.map((todo) => (
+          <Todo
+            todos={props.todos}
+            setTodos={props.setTodos}
+            key={todo.id}
+            todo={todo}
+            text={todo.text}
+          />
         ))}
       </ul>
     </div>
